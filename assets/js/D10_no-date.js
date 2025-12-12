@@ -401,7 +401,7 @@ Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 
 function removeAllLi(myUl) {
   while (myUl.firstChild) {
-    myUl.removeChild(muUl.firstChild);
+    myUl.removeChild(myUl.firstChild);
   } //Continua il ciclo finchè myUl possiede dei figli, altrimenti la condizione del while sarà false e uscirà
 }
 
