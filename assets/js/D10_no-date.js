@@ -317,12 +317,10 @@ Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come param
 */
 
 function searchAndDivide(myMovies, myString) {
-  const filteredMovies = [
-    {
-      match: [],
-      unmatch: [],
-    },
-  ];
+  const filteredMovies = {
+    match: [],
+    unmatch: [],
+  };
   myString.trim();
   myMovies.forEach((movie) => {
     if (movie.Title.toUpperCase().includes(myString.toUpperCase())) {
@@ -483,6 +481,14 @@ Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e rit
 */
 
 function isItPrime(num) {
+  for (let i = num - 1; i > 1; i--) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+
+//Metodo Alternativo
+/* function isItPrime(num) {
   let counter = 1;
   do {
     counter++;
@@ -495,7 +501,7 @@ function isItPrime(num) {
     } else return true;
   } while (true);
 }
-
+ */
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
 const movies = [
@@ -613,5 +619,3 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
-
-console.log(searchByTitle(movies, "avengers"));
